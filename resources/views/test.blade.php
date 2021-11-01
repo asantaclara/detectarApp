@@ -18,7 +18,7 @@
                             @include("pause")
                         </div>
                         <div class="justify-content-right">
-                            <button class="btn btn-primary" type="submit" name="finalizarTest" value="true">Terminar</button>
+                            <button class="btn btn-link" type="submit" name="finalizarTest" value="true">Terminar</button>
                         </div>
                     </form>
                 </div>
