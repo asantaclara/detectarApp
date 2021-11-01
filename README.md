@@ -16,17 +16,28 @@ Sistema orientativo para la detección de señales de alerta de dificultades del
 
 ## Instalación
 
+### Desde git
+
 - Clonar este repositorio en una computadora con Linux
 ```bash
 git clone git@github.com:asantaclara/detectarApp.git
 ```
 
-- Copiar el archivo <code>.env.example</code> a <code>.env</code> utilizando el siguiente comando, y configurar a gusto (O utilizar el archivo provisionado)
+- En la raiz del proyecto, copiar el archivo <code>.env.example</code> a <code>.env</code> utilizando el siguiente comando, y configurar a gusto (O utilizar el archivo provisionado)
 ```bash
 cp .env.example .env
 ```
 
-- Instalar PHP, docker y docker-compose, junto a sus dependencias, y correr la aplicación con el siguiente comando:
+- Instalar PHP, docker y docker-compose, junto a sus dependencias, y correr la aplicación con el siguiente comando desde la raiz del proyecto:
+```bash
+sh install.sh
+```
+
+### Desde el archivo comprimido
+
+- Descomprimir el archivo
+
+- Instalar PHP, docker y docker-compose, junto a sus dependencias, y correr la aplicación con el siguiente comando desde la raiz del proyecto:
 ```bash
 sh install.sh
 ```
