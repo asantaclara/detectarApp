@@ -33,16 +33,17 @@ sh install.sh
 
 ## Uso
 
-- Para correr el proyecto correr el siguiente comando:
+- Para iniciar el proyecto correr el siguiente comando:
 ```bash
 sh run.sh
 ```
+- Esperar unos minutos a que Docker inicialice el entorno.
 
 - El proyecto corre en el puerto 80, usted debería poder entrar ingresando aqui [aquí](http://localhost)
 
 ## Soporte
 
-En caso de necesitar ayuda, puede comununicarse por mail a las siguientes direcciones:
+En caso de necesitar ayuda, comununicarse por mail a las siguientes direcciones:
 
 - Camila Inversi: cinversi@uade.edu.ar
 - Alejandro Santa Clara: asantaclara@uade.edu.ar
