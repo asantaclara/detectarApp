@@ -28,21 +28,28 @@ git clone git@github.com:asantaclara/detectarApp.git
 cp .env.example .env
 ```
 
-- Instalar PHP, docker y docker-compose, junto a sus dependencias, y correr la aplicación con el siguiente comando desde la raiz del proyecto:
+- En la raiz del proyecto ejecutar el siguiente comando, esto instalará PHP, docker y docker-compose, junto a sus dependencias:
 ```bash
 sh install.sh
 ```
 
 ### Desde el archivo comprimido
 
-- Descomprimir el archivo
-
-- Instalar PHP, docker y docker-compose, junto a sus dependencias, y correr la aplicación con el siguiente comando desde la raiz del proyecto:
+- En la raiz del proyecto ejecutar el siguiente comando, esto instalará PHP, docker y docker-compose, junto a sus dependencias:
 ```bash
 sh install.sh
 ```
 
 ## Uso
+
+- El proyecto está configurado para correr en el puerto 80, por lo tanto debe estar libre. Para ver los procesos corriendo en el puerto 80 ejecutar:
+```bash
+sudo lsof -i -P -n | grep 80
+```
+- Usualmente está corriendo Apache, ejecutando el siguiente comando se puede detener:
+```bash
+sudo service apache2 stop
+```
 
 - Para iniciar el proyecto correr el siguiente comando:
 ```bash
@@ -50,7 +57,7 @@ sh run.sh
 ```
 - Esperar unos minutos a que Docker inicialice el entorno.
 
-- El proyecto corre en el puerto 80, usted debería poder entrar ingresando aqui [aquí](http://localhost)
+- El proyecto corre en el puerto 80, usted debería poder entrar ingresando [aquí](http://localhost)
 
 ## Soporte
 
