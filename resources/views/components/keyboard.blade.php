@@ -15,10 +15,10 @@
         function addNumber(number) {
             old_input = document.getElementById("number").value;
             new_input = old_input + number;
-            document.getElementById("number").setAttribute("value", new_input);
+            document.getElementById('number').value = new_input;
         }
         function clearAnswer() {
-            document.getElementById("number").setAttribute("value", '');
+            document.getElementById('number').value = '';
         }
     </script> 
 @endsection
