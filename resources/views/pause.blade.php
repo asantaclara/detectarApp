@@ -1,4 +1,4 @@
-<div class="form-group text-center" id="relax_time">
+<div class="form-group text-center collapse" id="relax_time">
     <div class="row">
         <div class="col">
             <div>

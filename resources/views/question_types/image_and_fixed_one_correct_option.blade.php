@@ -7,7 +7,7 @@
             @php
                 $possible_answers = $question->possible_answers->shuffle();
             @endphp
-            @foreach ($possible_answers as $i => $answer)
+            @foreach ($possible_answers->shuffle() as $i => $answer)
                 @php
                     if($answer->healthyAnswer()) {
                         $ok_value = $answer->min_value;

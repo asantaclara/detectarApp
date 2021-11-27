@@ -1,7 +1,6 @@
 <script type="text/javascript">
         var idleTime = 0;
         $(document).ready(function () {
-            hideRelax();
             showQuestion();
             var idleInterval = setInterval(timerIncrement, 1000);
             $(this).mousemove(function (e) {

@@ -9,7 +9,7 @@
                 $count_possible_answers = count($possible_answers);
                 $shown_answers = min(5,$count_possible_answers * 2);
             @endphp
-            @foreach ($possible_answers as $i => $answer)
+            @foreach ($possible_answers->shuffle() as $i => $answer)
                 @php
                     if($answer->healthyAnswer()) {
                         $ok_value = $answer->min_value;
