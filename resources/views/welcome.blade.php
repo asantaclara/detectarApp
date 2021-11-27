@@ -5,7 +5,7 @@
         <div class="col-4 mt-5">
             <div>
                 <h3>Bienvenidos a DetectAR</h3>
-                <div>Este sitio permite realizar una evaluación para poder orientar como señal de alerta sobre distintas dificultades de aprendizaje</div>
+                <div>En este sitio podrás realizar una evaluación que te permitirá detectar de forma orientativa alguna dificultad en el aprendizaje</div>
                 <a class="btn btn-info mt-2" href="{{ URL::route('about-tests') }}" title="Acerca de las pruebas">Acerca de las pruebas</a>
             </div>
             <div class="mt-5">

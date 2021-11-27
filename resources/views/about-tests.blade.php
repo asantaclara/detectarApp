@@ -10,7 +10,7 @@
     <div class="mt-5">
         <div class="row">
             <div class="col-4 text-center">
-                <div>Percepción de los colores</div>
+                <div>Visión</div>
                 <img src="{{asset('images/view_images/colorblindness_logo.png')}}" class="d-inline-block align-center img-fluid" alt="">
                 <div>Percepción de los colores</div>
             </div>

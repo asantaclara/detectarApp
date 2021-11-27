@@ -14,12 +14,12 @@
                     ¡La prueba ha finalizado!
                 </h2>
                 <h4 class="mt-4">
-                    Los resultados de la prueba han sido enviados a su casilla de email asociada a su cuenta.
-                    Si el mail no llega inmediatamente aguarde unos 15 minutos o revise la carpeta spam.
+                    Los resultados de la prueba han sido enviados a tú casilla de email asociada a la cuenta.
+                    Si el mail no llega inmediatamente esperá unos 15 minutos o revisá la carpeta de spam.
                     ¡Muchas gracias por utilizar DetectAR!
                 </h4>    
                 <h4 class="font-weight-bold mt-4">
-                    Si queres realizar nuevamente la prueba podes volver a presiontar el botón COMENZAR
+                    Si querés realizar nuevamente la prueba podés volver a apretar el botón COMENZAR
                 </h4>
                 <div class="font-weight-bold mt-4">
                     <a class="btn btn-warning btn-block" href="{{ URL::route('new-test') }}" title="COMENZAR">COMENZAR</a>

@@ -16,9 +16,10 @@
                             <input type="hidden" class="form-control timepicker-hasta" name="test_id" value="{{ $test->id }}">
                             @include("question_types." . $question->view_path)
                             @include("pause")
+                            @include("in_process")
                         </div>
-                        <div class="justify-content-right">
-                            <button class="btn btn-link" type="submit" name="finalizarTest" value="true">Terminar</button>
+                        <div class="justify-content-right" id="end_button">
+                            <button class="btn btn-link" type="submit" name="finalizarTest" value="true" onclick="terminarTest()">Terminar</button>
                         </div>
                     </form>
                 </div>
@@ -26,6 +27,7 @@
         </div>
     </div>
     @include('js.relax_time')
+    @include('js.in_process')
 @endsection
 @section('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
