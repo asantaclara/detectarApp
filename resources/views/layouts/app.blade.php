@@ -84,7 +84,7 @@
                 </div>
             </div>
         </nav>
-        <main class="py-4" style="min-height: 700px">
+        <main class="py-4" style="min-height: 600px">
             @yield('content')
         </main>
         @include('layouts/footer')
