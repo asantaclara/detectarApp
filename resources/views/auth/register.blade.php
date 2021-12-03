@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <h1 class="text-center">¿Listos para comenzar?</h1>
-    <h3 class="text-center">Para hacerlo te vamos a solicitar que completes los siguientes datos para poder enviarte los resultados de la evaluación</h3>
+    <h3 class="text-center">Para hacerlo te vamos a solicitar que completes los siguientes campos con los datos del niño para poder enviarte los resultados de la evaluación</h3>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card m-3">
