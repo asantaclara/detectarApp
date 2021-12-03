@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'max_questions' => 20,
+    'max_questions' => 10,
     'max_points_health_condition' => 5,
     'min_points_health_condition' => -10,
     'points_ok_condition' => 2,
