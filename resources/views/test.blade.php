@@ -19,7 +19,7 @@
                             @include("in_process")
                         </div>
                         <div class="justify-content-right" id="end_button">
-                            <button class="btn btn-link" type="submit" name="finalizarTest" value="true" onclick="terminarTest()">Terminar</button>
+                            <button class="btn btn-link" type="submit" name="finalizarTest" value="true" onclick="terminarTest(event)">Terminar</button>
                         </div>
                     </form>
                 </div>

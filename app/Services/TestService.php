@@ -68,6 +68,14 @@ class TestService {
             ->get();
         $health_condition_matrix = $this->createHealthConditionMatrix($health_conditions);
         $next_health_condition_type_id = $this->getNextHealtConditionType($health_condition_matrix);
+        info('HealthMatrix');
+        info($health_condition_matrix);
+        info('NextType');
+        info($next_health_condition_type_id);
+        if(config('constants.activate_auto_finish') && !$next_health_condition_type_id) {
+            info('Corte de prueba por validacion de todas las patologias');
+            return null;
+        }
         $question = TestQuestion::join('question_possible_answers as qps', 'qps.test_question_id', 'test_questions.id')
             ->join('health_conditions as hc', 'hc.id', 'qps.health_condition_id')
             ->join('health_condition_types as hct', 'hct.id', 'hc.health_condition_type_id')
