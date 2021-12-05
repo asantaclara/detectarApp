@@ -47,7 +47,9 @@ class TestService {
     public function getNextQuestion($test_id, $user_birthday)
     {
         $test = Test::where('id', $test_id)->first();
-        if(count($test->answers) > config('constants.max_questions')) { 
+        if(count($test->answers) >= config('constants.max_questions')) { 
+            info('finaliza la prubea por max preguntas');
+            info(count($test->answers).' de '. config('constants.max_questions'));
             return null;
         }
         $user_age = Carbon::parse($user_birthday)->age;
