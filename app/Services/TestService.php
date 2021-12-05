@@ -67,12 +67,12 @@ class TestService {
             ->selectRaw('hct.id as health_condition_type_id, hc.healthy, hc.name as hcName, count(*) as count')
             ->get();
         $health_condition_matrix = $this->createHealthConditionMatrix($health_conditions);
-        $next_health_condition_type_id = $this->getNextHealtConditionType($health_condition_matrix);
+        $next_health_condition_types = $this->getNextHealtConditionTypes($health_condition_matrix);
         info('HealthMatrix');
         info($health_condition_matrix);
         info('NextType');
-        info($next_health_condition_type_id);
-        if(config('constants.activate_auto_finish') && !$next_health_condition_type_id) {
+        info($next_health_condition_types);
+        if(config('constants.activate_auto_finish') && !$next_health_condition_types) {
             info('Corte de prueba por validacion de todas las patologias');
             return null;
         }
@@ -83,20 +83,9 @@ class TestService {
             ->where('min_age', '<=', $user_age)
             ->where('max_age', '>=', $user_age)
             ->whereNotIn('test_questions.id', $done_questions)
-            ->where('hct.id', $next_health_condition_type_id)
+            ->whereIn('hct.id', $next_health_condition_types)
             ->select('test_questions.*')
             ->inRandomOrder()->first();
-        if(!$question) {
-            $question = TestQuestion::join('question_possible_answers as qps', 'qps.test_question_id', 'test_questions.id')
-            ->join('health_conditions as hc', 'hc.id', 'qps.health_condition_id')
-            ->join('health_condition_types as hct', 'hct.id', 'hc.health_condition_type_id')
-            ->where('view_path', '!=', '')
-            ->where('min_age', '<=', $user_age)
-            ->where('max_age', '>=', $user_age)
-            ->whereNotIn('test_questions.id', $done_questions)
-            ->select('test_questions.*')
-            ->inRandomOrder()->first();
-        } 
         return $question;
     }
 
@@ -117,13 +106,13 @@ class TestService {
         return $health_condition_matrix;
     }
 
-    private function getNextHealtConditionType($health_condition_matrix) {
+    private function getNextHealtConditionTypes($health_condition_matrix) {
         $possible_health_conditions = array_filter($health_condition_matrix, function ($item) {
             // If value of health condition is out of range we know that the user is ok or has the health condition.
             return $item < config('constants.max_points_health_condition') && $item > (config('constants.min_points_health_condition')); 
         });
         if(count($possible_health_conditions) > 0) {
-            return array_keys($possible_health_conditions)[rand(0, count($possible_health_conditions)-1)];
+            return array_keys($possible_health_conditions);
         } else {
             return null;
         }
